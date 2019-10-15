@@ -1,0 +1,7 @@
+#Mon Oct 14 16:53:58 MDT 2019
+base.0=/Users/Tyler/Desktop/Android/Unit-3/Sprint-Android-Advanced-Kotlin-Assignments/M01/Assignment/AndroidNavigationDrawer/app/build/intermediates/dex/debug/mergeExtDexDebug/out
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/Tyler/Desktop/Android/Unit-3/Sprint-Android-Advanced-Kotlin-Assignments/M01/Assignment/AndroidNavigationDrawer/app/build/intermediates/dex/debug/mergeProjectDexDebug/out
