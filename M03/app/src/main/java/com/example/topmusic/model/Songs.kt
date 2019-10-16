@@ -8,7 +8,7 @@ class Rock(title: String, artist: String): Songs(title, artist)
 
 
 
-object List{
+object ListSongs{
     val popList = listOf(
         Pop("Truth Hurts", "Lizzo"),
         Pop("Senorita", "Shawn Mendes & Camila Cabello"),

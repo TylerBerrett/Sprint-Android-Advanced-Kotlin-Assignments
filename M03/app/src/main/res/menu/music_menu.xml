@@ -12,7 +12,4 @@
     <item
         android:id="@+id/rock"
         android:title="Top Rock" />
-
-
-
 </menu>

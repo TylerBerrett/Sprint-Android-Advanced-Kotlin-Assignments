@@ -8,9 +8,9 @@ import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.topmusic.model.*
-import com.example.topmusic.model.List.popList
-import com.example.topmusic.model.List.rapList
-import com.example.topmusic.model.List.rockList
+import com.example.topmusic.model.ListSongs.popList
+import com.example.topmusic.model.ListSongs.rapList
+import com.example.topmusic.model.ListSongs.rockList
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.properties.Delegates
 
