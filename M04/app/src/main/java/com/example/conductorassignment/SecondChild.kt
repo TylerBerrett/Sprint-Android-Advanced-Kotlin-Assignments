@@ -1,35 +1,37 @@
 package com.example.conductorassignment
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.ControllerChangeHandler
 import com.bluelinelabs.conductor.ControllerChangeType
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
-import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
 import kotlinx.android.synthetic.main.root_controller.view.*
+import kotlin.random.Random
 
-class FirstChild: Controller(), SecondChild.SecondChild {
 
-    var message: String? = null
+class SecondChild<T>(): Controller()
+    where T: Controller, T: SecondChild.SecondChild {
 
-    override fun randomNum(int: Int) {
-        message = "$int"
+    constructor(targetController: T): this() {
+        setTargetController(targetController)
+    }
+
+    /*constructor(args: Bundle?) : super(args){
+        randomNumber = args?.getInt("key")
+    }*/
+
+    interface SecondChild{
+        fun randomNum(int: Int)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view =  inflater.inflate(R.layout.root_controller, container, false)
-        view.text_view.text = if (message.isNullOrEmpty()){
-            "First Child"
-        } else {
-            "First Child$message"
-        }
-
-        if (!args.isEmpty){
-            println(args.getInt("key"))
-        }
+        view.text_view.text = "Second Child"
         return view
     }
 
@@ -38,18 +40,19 @@ class FirstChild: Controller(), SecondChild.SecondChild {
         changeType: ControllerChangeType
     ) {
         super.onChangeEnded(changeHandler, changeType)
-        view?.next_button?.setOnClickListener {
-            router.pushController(RouterTransaction.with(SecondChild(this))
-                .pushChangeHandler(VerticalChangeHandler())
-                .popChangeHandler(HorizontalChangeHandler())
-            )
+
+        val addButton = view?.next_button
+        addButton?.text = "Get Random Number"
+        addButton?.setOnClickListener {
+            args.putInt("key", Random.nextInt())
+            (targetController as SecondChild).randomNum(10)
         }
 
         view?.previous_button?.setOnClickListener {
             router.popCurrentController()
         }
+
+
+
     }
-
-
-
 }
