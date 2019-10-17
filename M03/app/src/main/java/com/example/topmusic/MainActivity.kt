@@ -4,14 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.topmusic.model.*
 import com.example.topmusic.model.ListSongs.popList
 import com.example.topmusic.model.ListSongs.rapList
 import com.example.topmusic.model.ListSongs.rockList
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
