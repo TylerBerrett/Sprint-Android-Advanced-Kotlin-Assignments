@@ -1,5 +1,6 @@
 package com.example.conductorassignment
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +12,19 @@ import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
 import com.bluelinelabs.conductor.changehandler.VerticalChangeHandler
 import kotlinx.android.synthetic.main.root_controller.view.*
 
-class FirstChild: Controller(), SecondChild.SecondChild {
+class FirstChild: Controller, SecondChild.SecondChild {
+
+
 
     var message: String? = null
+
+    constructor() : super() {
+    }
+
+    constructor(args: Bundle?) : super(args) {
+        args?.getString("string")
+    }
+
 
     override fun randomNum(int: Int) {
         message = "$int"
@@ -27,9 +38,10 @@ class FirstChild: Controller(), SecondChild.SecondChild {
             "First Child$message"
         }
 
-        if (!args.isEmpty){
-            println(args.getInt("key"))
-        }
+        println(args.getString("string"))
+
+
+
         return view
     }
 
