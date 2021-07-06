@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/card_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    app:cardBackgroundColor="@color/colorAccent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="24dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_card_title"
+            android:text="Let You Down"
+            android:textSize="32sp"
+            android:textColor="@android:color/white"
+            android:paddingStart="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_card_artist"
+            android:textSize="18dp"
+            android:paddingStart="8dp"
+            android:text="NF"
+            android:paddingBottom="8dp"
+            android:textColor="@color/darkWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

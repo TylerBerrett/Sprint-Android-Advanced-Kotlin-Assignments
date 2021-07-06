@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pop"
+        android:title="Top Pop" />
+
+    <item
+        android:id="@+id/rap"
+        android:title="Top Rap" />
+
+    <item
+        android:id="@+id/rock"
+        android:title="Top Rock" />
+</menu>
